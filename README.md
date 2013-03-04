@@ -8,7 +8,9 @@
 
 # 说明：
 
-两个脚本简单测试都通过了。但我对ruby更有信心一点。因为bash的是连抄带蒙的。
+三个脚本简单测试都通过了。bash的解法2最简单。是最后想到的，因为开始总是纠结于需要直接复制而不是先打包。
+
+我对ruby更有信心一点。因为bash的解法1是连抄带蒙的。
 
 # ruby脚本用法:
 
@@ -18,7 +20,15 @@
 
       ruby -w script.rb inputdir outputdir 20121202
 
-# bash脚本
+# 最简单的bash脚本 解法2
+
+刚想到其实我们思路改变一下，加上tar，就方便多了
+
+      tar cvf recent-300-days.tar $(find inputdir -type f -mtime -300)
+	  
+解tar的时候别在输入目录，等于覆盖了。
+
+# 不需要借助tarbash脚本 解法1
 
       find inputdir -type f -mtime -300 | sort | xargs -n1 -t -i cp --parents {} outpudir
 	  
