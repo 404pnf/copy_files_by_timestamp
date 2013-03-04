@@ -2,7 +2,13 @@
 
 # 需求：
 
-复制文件夹A中的所有某一日后的文件到文件夹B中。不包括空文件夹及时它的时间戳也符合要求，是不是？
+1. 复制文件夹A中所有某一日后更新过的文件到文件夹B中。
+2. 需要保留目录结构。
+3. 不包括空文件夹，即使它的时间戳也符合要求，是不是？
+
+# 说明：
+
+两个脚本简单测试都通过了。但我对ruby更有信心一点。因为bash的是连抄带蒙的。
 
 # ruby脚本用法:
 
@@ -23,6 +29,9 @@ inputdir和outputdir最好用绝对路径，如果你是把上面命令放到脚
 
 cp的--parents这么强大了！
 
+ref:
+<http://unix.stackexchange.com/questions/33486/how-to-copy-only-matching-files-preserving-subdirectories>
+<http://stackoverflow.com/questions/1650164/bash-copy-named-files-recursively-preserving-folder-structure>
 
 
 
